@@ -30,7 +30,7 @@ S = Subtraction */
 
 // Variable Swaping 
 $mname = "Kanak";
-printf('My name is %3$s  %1$s  %2$s ' , $fname, $lname, $mname); // Doller sign use korle collo ekta hobe ( ' ) 
+printf('My name is %3$s  %1$s  %2$s ' , $fname, $lname, $mname); // Doller sign use korle collon ekta hobe ( ' ) 
 
 printf(' The binary is equivalent of %1$d is %1$b' , 12);
 
