@@ -102,3 +102,62 @@ echo $result;
         break;
     }
  }
+
+// febonanchi 0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 989 1597 2584 
+
+
+ $veryold =0;
+ $old = 1;
+ $new = 1;
+
+ for ($i=0; $i<10 ; $i++){
+    echo $veryold." ";
+    $old = $new;
+    $new = $old+ $veryold;
+    $veryold = $old;
+ }
+echo "\n";  
+ // Specific operator due bujhi nai
+
+ $default_lat = 23.4;
+ $default_lon = 90.5;
+
+ $user_lat = 20.4;
+
+ $lat = $user_lat ?? $default_lat; // ??  null operator
+ echo $lat;
+ echo "\n";  
+
+function evenorodd($n){  // function parameter
+    if ($n%2==0){
+        return true;
+    }else{
+        return false;
+    }
+}   
+
+$x = 13;
+
+if (evenorodd($x)){ // function argument
+    echo "{$x} is even number";
+}else{ echo "{$x} is odd number "; 
+}
+
+ 
+function functiontest($n){
+    if ($n%2==0){
+        if ($n>=5 || $n=15)
+        return true;
+    } return false;
+} // function call
+
+$x = 10;
+if (functiontest($x)){
+    echo "{$x} is even number";
+}else{ echo "{$x} is odd number "; 
+}
+echo "\n";
+include_once "function.php";
+
+$x = 5;
+echo "Factorial of {$x} is ".factorial($x);
