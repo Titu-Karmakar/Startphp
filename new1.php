@@ -161,3 +161,22 @@ include_once "function.php";
 
 $x = 5;
 echo "Factorial of {$x} is ".factorial($x);
+echo "\n";
+
+function sum(int $x,int $y,int $z ):int {// return type :int or it can be string 
+    return $x+$y+$z;
+}
+echo sum(6,7,8);
+
+echo "\n";
+
+function Withargument (int ...$numbers):int { // unlimited sum argument 
+    $result=0;
+    for ($i=0; $i<count($numbers); $i++){
+        $result+= $numbers[$i];
+    }
+    return $result;
+
+}
+echo Withargument(5,6,7,6,888,8); 
+
