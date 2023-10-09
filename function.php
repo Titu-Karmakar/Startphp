@@ -7,3 +7,7 @@ function factorial( int $n){
     }
     return $result;
 }
+
+function serve($food = "Cigarret" , $item = "1 pis"){ // default or optional value
+    echo "{$item} of {$food} has / have been served ";
+}
