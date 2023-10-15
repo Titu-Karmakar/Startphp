@@ -180,3 +180,68 @@ function Withargument (int ...$numbers):int { // unlimited sum argument
 }
 echo Withargument(5,6,7,6,888,8); 
 
+function printNumber($start, $end){ // recursive function
+    if ($start>$end){
+        return;
+    }
+    echo $start. "\n";
+    $start++;
+    printNumber($start,$end);
+}
+printNumber(10, 21);
+
+echo "\n";
+
+function printSnumber($start, $end, $stepping=2 ){ // recursive function with stteping 
+    if ($start>$end){
+        return;
+    }
+    echo $start. "\n";
+    $start+= $stepping;
+    printNumber($start,$end,$stepping);
+}
+printSnumber(10, 21); 
+
+
+function fibonacci($old,$new,$start,$end){
+
+
+    if ($start>$end){
+        return;
+    }
+    $start++;
+    echo $old." ";
+
+    $_temp = $old + $new;
+    $old = $new;
+    $new = $_temp;
+        
+    fibonacci($old,$new,$start,$end);
+}
+fibonacci (0,1,2,30); 
+
+echo "\n";
+
+function factorialrecursive($n){
+    if ($n<=1){
+        return 1;
+    }
+    return $n*factorialrecursive($n-1);
+}
+
+echo factorialrecursive(9);
+
+echo "\n";
+
+function staticscope(){
+    static $i; //static scope :  $i er man update hoye save thakbe ar  sudu ei function er jonno applicable 
+    $i =$i ?? 0;
+    $i++;
+    echo $i;
+    echo "\n";
+
+} 
+staticscope();
+staticscope();
+staticscope();
+staticscope();
