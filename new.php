@@ -49,5 +49,36 @@ $output = sprintf("His name is %s %s", $fname, $lname); // sprintf
 echo $output;
 echo strtoupper($output);  // we can add processing 
 
+echo "\n";
+
+function dosomething(){  // variable Local scope : baire gele ar khuje paoya jay na error dekhay
+    $name = "titu karmakar";
+    echo $name;
+}
+
+dosomething();
+
+echo "\n";
+
+$nameglobal = "Earth";
+
+function dosomethingsuperglobal(){  // variable super global scope : baire theke dak deya jay
+    echo $GLOBALS['nameglobal'];
+    //echo $nameglobal;
+}
+
+dosomethingsuperglobal();
+
+echo "\n"; 
+
+$nameglobalone = "Earth2";
+
+function dosomethingglobal(){  // variable global scope : baire theke dak deya jay
+    global $nameglobalone;
+    echo $nameglobalone;
+    
+}
+
+dosomethingglobal();
 
 
