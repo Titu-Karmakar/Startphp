@@ -245,3 +245,104 @@ staticscope();
 staticscope();
 staticscope();
 staticscope();
+
+$student = [   // Associative array : key (23,34, ..) diye access korte hoy 
+    '23'=> 'Kamal', 
+    '34'=> 'Hasan', 
+    '56'=> 'Rohan'
+]; 
+$student = array(   // Associative array : key (23,34, ..) diye access korte hoy 
+    '23'=> 'Kamal', 
+    '34'=> 'Hasan', 
+    '56'=> 'Rohan'
+); 
+print_r($student);
+echo $student[23];
+echo "\n";
+
+$foods = [
+    'vegetable' => 'begun, bendi, alu, kacamorich',
+    'drinks' => 'milk, water, orange juice, wine'
+];
+
+foreach ($foods as $key => $value){ // special loop system
+    echo $key."=".$value."\n";
+}
+
+// //echo PHP_EOL;
+
+$keys = array_keys($foods);
+print_r($keys);
+
+
+$keys = array_keys($foods);
+for($i=0; $i<count($keys);$i++){
+    $key = $keys[$i];
+    echo $foods[$key]."\n";
+}
+
+$vegitable = explode (', ','carrot, tormuj, dhundhol, capsicum, hayati');  // string to array by delimeter, (', ' ) delimetre
+$vegitableString = join(', ', $vegitable); // array to string 
+echo $vegitableString;
+echo $vegitable[1];
+print_r($vegitable);
+
+$vegitable = explode (', ','carrot, tormuj, dhundhol, capsicum, hayati');
+$vegitable = preg_split ('/(, |,)/','carrot, tormuj,kolaboti, dhundhol, capsicum, hayati, newnwe,wewewewewe'); // Multiple delimeter '/(, |,)/'
+
+echo count($vegitable);
+
+$studentarray = ["rahim","karim",123,"monir"];
+$studentarray [2] = "shofiq" ; //change data
+
+$starray = array_shift($studentarray); // remove the frist one from array by  
+$starray = array_pop($studentarray); // remove the last one from array by 
+$starray = array_push($studentarray, "kamal"); // add in the last one from array by 
+$starray = array_unshift($studentarray, "salam"); // add the frist one from array by 
+print_r($studentarray);
+
+$sample = [  // Multidimentional array or nested array
+    'test' => [
+        'test-again'=> [
+            'a',
+            'b',
+            'c',
+            'd'
+        ]
+    ],
+];
+
+echo $sample['test']['test-again'][2];
+
+$sample2 =[  // Multidimentional array or nested array
+    [1,2,3,4],
+    [11,22,33,44],
+    [111,222,333,[87,87],4444,555,[343,434,6635]]
+];
+
+print_r($sample2);
+echo $sample2[2][3][0];
+
+
+$students = array(
+    'fname' => 'jamal',
+    'lname' => 'Ahmad',
+    'age' => 23,
+    'class' => 12,
+    'section' => 'A'
+);
+
+print_r($students);
+
+$serialized = serialize($students); // array to string 
+echo $serialized; 
+$newstudent = unserialize($serialized);
+print_r($newstudent);
+
+$jsondata = json_encode($students); //json data array to string 
+echo $jsondata;
+echo "\n";
+$jsondatadecode = json_decode($jsondata, true); // json string to array 
+print_r($students);
+
+
